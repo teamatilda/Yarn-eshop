@@ -37,9 +37,11 @@
     <div class="product-card-container">
         <div class="product-card">
             <ul>
-                @for (product of products(); track product.id) {
+                @for (product of products(); track product.ID) {
                 <li>
-                    {{ product.title }}
+                    <img [src]="product.Image_url" [alt]="product.Title">
+                    {{ product.Title }}
+                    <p>{{ product.Price }} kr</p>
                 </li>
             }
             </ul>
