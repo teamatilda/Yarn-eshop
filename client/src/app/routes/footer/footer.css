@@ -1,0 +1,88 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: var(--font-body);
+}
+
+.footer-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5 rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.info-card { 
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-card p {
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .footer-icons {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+
+.footer-icons span {
+  font-size: 4rem;
+}
+
+.dropdown-info {
+  padding: 4rem;
+  margin-top: auto;
+  justify-content: center;
+  /* Forces footer to bottom of page */
+
+  /* Layout: side-by-side on desktop, stacked on mobile */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Style the columns */
+.my-pages,
+.customer-service {
+  min-width: 200px;
+}
+
+/* Summary header styling */
+.dropdown-info summary {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  cursor: pointer;
+  list-style: none; /* Removes native arrow */
+}
+
+/* Dropdown list styling */
+.dropdown-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-info li {
+  margin-bottom: 10px;
+}
+
+.dropdown-info a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+.dropdown-info a:hover {
+  color: #ffffff;
+}
