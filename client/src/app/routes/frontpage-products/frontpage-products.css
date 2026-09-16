@@ -1,0 +1,54 @@
+/* HERO */
+
+.hero-section {
+    max-width: 640px;
+    object-fit: fill;
+    background-size: fill;
+    align-items: center;
+    align-content: center;
+    padding: 0;
+}
+
+.carousel-gallery {
+    padding: 1rem;
+    display: grid;
+   /* grid-template-columns: repeat(auto, auto); */
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    scroll-snap-type: mandatory;
+}
+
+.carousel-item {
+    scroll-snap-align: start;
+    display: inline-block;
+    width: 100%;
+}
+
+.carousel-image img {
+    width: 640px;
+
+}
+
+/*
+
+.hero-image img {
+    width: 100%;
+}
+
+.hero-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-header h2 {
+    color: var(--color-cream);
+    font-size: clamp(2rem,  3rem, 6rem);
+    text-align: center;
+}
+
+/* PRODUKTER */

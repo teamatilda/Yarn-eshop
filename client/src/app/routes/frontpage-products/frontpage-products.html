@@ -1,0 +1,49 @@
+<!--Denna sida visas på home-page och innehåller en hero och produktkort-->
+
+<!--hero-sektion-->
+<div class="hero-section">
+    <!-- Dynamisk bildkarusell -->
+    <div class="carousel-gallery">
+        <div class="carousel-item">
+            <div class="carousel-image">
+                <img src="/images/hero.jpg" alt="Stickade plagg">
+            </div>
+            <div class="hero-header">
+                <h2>bla bla bla</h2>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-image">
+                <img src="/images/yarn.jpg" alt="Garnnystan">
+            </div>
+            <div class="hero-header">
+                <h2>Nyinkomna garner</h2>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="carousel-image">
+                <img src="/images/sweater.jpg" alt="Stickad tröja">
+            </div>
+            <div class="hero-header">
+                <h2>Handla efter mönster</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Produktkort -->
+<section>
+    <div class="product-card-container">
+        <div class="product-card">
+            <ul>
+                @for (product of products(); track product.id) {
+                <li>
+                    {{ product.title }}
+                </li>
+            }
+            </ul>
+        </div>
+    </div>
+
+</section>
