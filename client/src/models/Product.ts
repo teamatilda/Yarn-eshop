@@ -3,7 +3,8 @@
 /* Interface för produkter */
 
 export interface Product {
-    id: number;
-    title: string;
-    price: number;
+    ID: number;
+    Title: string;
+    Price: number;
+    Image_url: string;
 }
