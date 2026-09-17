@@ -32,23 +32,4 @@
 
 }
 
-/*
-
-.hero-image img {
-    width: 100%;
-}
-
-.hero-header {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.hero-header h2 {
-    color: var(--color-cream);
-    font-size: clamp(2rem,  3rem, 6rem);
-    text-align: center;
-}
-
 /* PRODUKTER */

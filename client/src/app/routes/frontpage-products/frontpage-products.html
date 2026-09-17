@@ -34,18 +34,17 @@
 
 <!-- Produktkort -->
 <section>
-    <div class="product-card-container">
+    <div class="product-grid">
+        @for (product of products(); track product.ID) {
         <div class="product-card">
-            <ul>
-                @for (product of products(); track product.ID) {
-                <li>
-                    <img [src]="product.Image_url" [alt]="product.Title">
-                    {{ product.Title }}
-                    <p>{{ product.Price }} kr</p>
-                </li>
-            }
-            </ul>
+            <div class="product-card__image-wrap">
+                <img [src]="product.Image_url" [alt]="product.Title" class="product-card__image">
+            </div>
+            <div class="product-card__body">
+                <h3 class="product-card__title">{{ product.Title }}</h3>
+                <p class="product-card__price">{{ product.Price }} kr</p>
+            </div>
         </div>
+    }
     </div>
-
 </section>
