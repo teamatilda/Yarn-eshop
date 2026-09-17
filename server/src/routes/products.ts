@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 router.get('/:id', (req, res) => {
     const product = db.prepare('SELECT * FROM products WHERE id = ?').get(req.params.id);
     if (!product) {
-        return res.status(404).json({ error: 'Product not found' });
+        return res.status(404).json({ error: 'Hittade ingen produkt' });
     }
     res.json(product);
 });

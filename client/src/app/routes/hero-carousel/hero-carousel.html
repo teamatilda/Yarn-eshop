@@ -1,0 +1,31 @@
+<!-- Hero carousel visar en dynamisk bildkarusell i heron-->
+
+<div class="hero"
+     (mouseenter)="stopAutoplay()"
+     (mouseleave)="startAutoplay()">
+
+  <div class="hero-track" [style.transform]="'translateX(-' + (currentIndex() * 100) + '%)'">
+    @for (slide of slides(); track slide.id) {
+      <div class="hero-slide" [style.background-image]="'url(' + slide.imageUrl + ')'">
+        <div class="hero-overlay">
+          <h1 class="hero-title">{{ slide.title }}</h1>
+          <a [href]="slide.ctaLink" class="hero-cta">{{ slide.ctaText }}</a>
+        </div>
+      </div>
+    }
+  </div>
+
+  <button class="hero-arrow hero-arrow-prev" (click)="prev()" aria-label="Previous slide">&#8249;</button>
+  <button class="hero-arrow hero-arrow-next" (click)="next()" aria-label="Next slide">&#8250;</button>
+
+  <div class="hero-dots">
+    @for (slide of slides(); track slide.id; let i = $index) {
+      <button
+        class="hero-dot"
+        [class.hero-dot--active]="i === currentIndex()"
+        (click)="goTo(i)"
+        [attr.aria-label]="'Go to slide ' + (i + 1)">
+      </button>
+    }
+  </div>
+</div>
