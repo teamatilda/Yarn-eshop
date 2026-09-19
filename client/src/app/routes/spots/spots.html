@@ -1,0 +1,10 @@
+<!-- Spot component-->
+
+<div class="spots">
+  @for (spot of spots(); track spot.id) {
+    <a class="spot" [style.background-image]="'url(' + spot.image_url + ')'">
+      <span class="spot-overlay"></span>
+      <span class="spot-text">{{ spot.text }}</span>
+    </a>
+  }
+</div>

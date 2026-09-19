@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import productRouter from "./routes/products.js";
+import spotsRouter from "./routes/spots.js";
 
 // Skapa express-applikationen
 const app = express();
@@ -19,8 +20,11 @@ const port = process.env.PORT || 8000;
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 // Alla HTTP-anrop
-// "/api/products" ska hanteras av issueRouter
+// "/api/products" ska hanteras av productRouter
 app.use("/api/products", productRouter);
+
+// /api/spots ska hanteras av spotsRouter
+app.use("/api/spots", spotsRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
