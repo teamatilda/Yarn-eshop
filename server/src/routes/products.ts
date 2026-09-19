@@ -10,6 +10,20 @@ router.get("/", (req, res) => {
     res.json(products);
 });
 
+// GET products matching search query 
+router.get('/search', (req, res) => {
+    const query= req.query.q as string;
+
+    if (!query || query.trim() === '') {
+        return res.json([]);
+    }
+
+    const stmt = db.prepare('SELECT * FROM products WHERE Title LIKE ?');
+    const results = stmt.all('%${query}%');
+
+    res.json(results);
+})
+
 // GET single product by id
 router.get('/:id', (req, res) => {
     const product = db.prepare('SELECT * FROM products WHERE id = ?').get(req.params.id);
