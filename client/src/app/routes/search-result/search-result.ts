@@ -1,13 +1,13 @@
 /* Varje gång URL:ens ?q=...-parameter ändras, körs en ny sökning mot backend automatiskt. Resultatet hålls i en signal (products) som din HTML-template kan läsa med products() – och eftersom det är en signal uppdateras vyn garanterat  */
 
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterEvent, RouterLink } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { switchMap } from 'rxjs';
 import { ProductService } from '../../service/products.service';
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-search-result',
   styleUrl: './search-result.css',
   templateUrl: './search-result.html',

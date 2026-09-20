@@ -29,6 +29,7 @@ h2 {
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease;
+  text-decoration: none;
 }
 
 .product-card:hover {

@@ -1,16 +1,14 @@
 <!-- PRODUCT-DETAIL PAGE -->
 
-<div class="product-details">
-     @for (product of products(); track product.ID) {
-        <div class="product-detail-card">
-            <div class="product-image">
-                <img [src]="product.Image_url" [alt]="product.Title" class="product-image">
-            </div>
-            <div class="product-detail-body">
-                <h3 class="product-title">{{ product.Title }}</h3>
-                <p class="product-price">{{ product.Price }} kr</p>
-            </div>
-        </div>
-     }
-</div>
+@if (product(); as p) {
+  <section class="product-detail">
+    <img [src]="p.Image_url" [alt]="p.Title" class="product-detail__image" />
+    <div class="product-detail__info">
+      <h1>{{ p.Title }}</h1>
+      <p class="product-detail__price">{{ p.Price }} kr</p>
+    </div>
+  </section>
+} @else {
+  <p>Laddar produkt...</p>
+}
 
