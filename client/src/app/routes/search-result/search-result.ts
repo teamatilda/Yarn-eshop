@@ -1,7 +1,9 @@
+/* Varje gång URL:ens ?q=...-parameter ändras, körs en ny sökning mot backend automatiskt. Resultatet hålls i en signal (products) som din HTML-template kan läsa med products() – och eftersom det är en signal uppdateras vyn garanterat  */
+
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { switchMap, tap } from 'rxjs';
+import { switchMap } from 'rxjs';
 import { ProductService } from '../../service/products.service';
 
 @Component({
@@ -16,16 +18,9 @@ export class SearchResult {
 
   products = toSignal(
     this.route.queryParams.pipe(
-      tap(params => console.log('queryParams emitted:', params)),
       switchMap(params => {
         const q = params['q'];
-        console.log('q är:', q);
-        if (!q) {
-          return [];
-        }
-        return this.productService.searchProducts(q).pipe(
-          tap(data => console.log('sökresultat:', data))
-        );
+        return q ? this.productService.searchProducts(q) : [];
       })
     ),
     { initialValue: [] }

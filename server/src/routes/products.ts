@@ -19,7 +19,7 @@ router.get('/search', (req, res) => {
     }
 
     const stmt = db.prepare('SELECT * FROM products WHERE Title LIKE ?');
-    const results = stmt.all('%${query}%');
+    const results = stmt.all(`%${query}%`);
 
     res.json(results);
 })

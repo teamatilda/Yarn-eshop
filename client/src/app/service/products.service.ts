@@ -1,3 +1,5 @@
+/* Service with methods to get products fro backend  */
+
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
