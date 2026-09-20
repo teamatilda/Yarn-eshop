@@ -22,8 +22,6 @@ header .header-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
 }
 
 .search-field {
@@ -36,15 +34,15 @@ input[type="text"] {
   padding: 10px 12px;
   border: 1px solid var(--color-chocolate);
   border-radius: 8px;
-  margin-right: 0.5rem;
   display: inline-block;
   width: min(250px, 40vw);
   font-size: 1rem;
+  margin-right: 0.5rem;
 }
 
 /* SÖK-KNAPP*/
 
-.button {
+.search button {
   background-color: var(--color-dark-sage);
   color: var(--color-cream);
   border: none;
@@ -55,7 +53,7 @@ input[type="text"] {
   transition: background-color 0.2s ease;
 }
 
-.button:hover {
+.search button:hover {
   background-color: var(--color-sage);
 }
 
@@ -174,8 +172,7 @@ input[type="text"] {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
-        margin: 0;
+        margin-right: 0.5rem;
     }
 
     .icons {
@@ -217,7 +214,6 @@ input[type="text"] {
 
     .search {
         justify-content: center;
-        gap: 1.5rem;
     }
 
     input[type="text"] {

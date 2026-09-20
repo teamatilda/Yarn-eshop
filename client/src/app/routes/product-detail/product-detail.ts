@@ -1,11 +1,12 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { switchMap } from 'rxjs';
 import { ProductService } from '../../service/products.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-product-detail',
   styleUrl: './product-detail.css',
   templateUrl: './product-detail.html',
@@ -22,4 +23,17 @@ export class ProductDetail {
       })
     )
   );
+
+  // All products
+  allProducts = toSignal(this.productService.getAllProducts(), { initialValue: [] });
+
+  // Similar products
+  similarProducts = computed(() => {
+    const current = this.product();
+    if (!current) return [];
+    return this.allProducts()
+    .filter(p => p.ID !== current.ID)
+    .slice(0, 3);
+  })
+
 }
