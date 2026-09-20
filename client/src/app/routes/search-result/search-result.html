@@ -1,0 +1,21 @@
+<!-- SÖKRESULTAT -->
+
+
+<h2>Hittade {{ products().length }} produkter</h2>
+
+<div class="search-results">
+  @for (product of products(); track product.ID) {
+  <div class="product-card">
+    <div class="product-card-image-wrap">
+      <img [src]="product.Image_url" [alt]="product.Title" class="product-card-image">
+    </div>
+    <div class="product-card-body">
+      <h3 class="product-card-title">{{ product.Title }}</h3>
+      <p class="product-card-price">{{ product.Price }} kr</p>
+    </div>
+  </div>
+  }
+  @empty {
+  <p>Inga produkter hittades.</p>
+  }
+</div>
