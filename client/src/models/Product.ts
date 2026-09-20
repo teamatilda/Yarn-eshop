@@ -8,4 +8,5 @@ export interface Product {
     Price: number;
     Image_url: string;
     Slug: string;
+    Description: string;
 }

@@ -2,10 +2,11 @@
 
 @if (product(); as p) {
   <section class="product-detail">
-    <img [src]="p.Image_url" [alt]="p.Title" class="product-detail__image" />
-    <div class="product-detail__info">
+    <img [src]="p.Image_url" [alt]="p.Title" class="product-detail-image" />
+    <div class="product-detail-info">
       <h1>{{ p.Title }}</h1>
-      <p class="product-detail__price">{{ p.Price }} kr</p>
+      <p class="product-detail-price">{{ p.Price }} kr</p>
+      <p class="product-detail-description">{{ p.Description }}</p>
       <button class="buy-btn">Lägg till i varukorg</button>
     </div>
   </section>
