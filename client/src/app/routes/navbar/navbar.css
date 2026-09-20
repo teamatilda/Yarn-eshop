@@ -1,8 +1,19 @@
 /* HEADER MED LOGGA */
 
-header h1 {
+header .header-logo {
     text-align: center;
     margin: 0 0 2rem;
+}
+
+.header-logo {
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+}
+
+.header-logo h1 {
+    font-size: inherit;
+    margin: 0;
 }
 
 /* SÖKFÄLT*/
@@ -104,7 +115,7 @@ input[type="text"] {
         gap: 1rem;
     }
 
-    header h1 {
+    header .header-logo {
         grid-column: 1 / -1;
         grid-row: 1;
         font-size: 4rem;
@@ -148,7 +159,7 @@ input[type="text"] {
         row-gap: 1rem;
     }
 
-    header h1 {
+    header .header-logo {
         grid-column: 1;
         grid-row: 1;
         justify-content: start;
@@ -200,7 +211,7 @@ input[type="text"] {
         row-gap: 1.5rem;
     }
 
-    header h1 {
+    header .header-logo {
         font-size: 3.5rem;
     }
 

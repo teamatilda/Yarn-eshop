@@ -1,3 +1,9 @@
+* {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+}
+
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -13,6 +19,10 @@
     gap: 1.5 rem;
     align-items: center;
     justify-content: center;
+}
+
+.footer-icons a {
+  text-decoration: none;
 }
 
 
@@ -84,5 +94,5 @@
 }
 
 .dropdown-info a:hover {
-  color: #ffffff;
+  color: var(--color-sage);
 }

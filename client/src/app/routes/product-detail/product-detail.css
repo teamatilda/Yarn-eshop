@@ -38,6 +38,26 @@
   margin: 0;
 }
 
+.buy-btn {
+  padding: 14px 24px;
+  background: var(--color-dark-sage);
+  color: var(--color-cream);
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+  margin-top: 8px;
+}
+
+
+.buy-btn:hover {
+  background: var(--color-sage);
+  transform: translateY(-2px);
+}
+
 /* >= 640px: tablet, bild och info sida vid sida */
 @media (min-width: 640px) {
   .product-detail {
@@ -56,6 +76,11 @@
   .product-detail__info {
     padding-top: 8px;
   }
+
+  .buy-btn {
+    align-self: flex-start;
+  }
+
 }
 
 /* >= 1024px: desktop, mer luft */
@@ -72,5 +97,9 @@
 
   .product-detail__price {
     font-size: 1.8rem;
+  }
+
+   .buy-btn {
+    align-self: flex-start;
   }
 }
