@@ -9,7 +9,7 @@
       <div class="hero-slide" [style.background-image]="'url(' + slide.imageUrl + ')'">
         <div class="hero-overlay">
           <h1 class="hero-title">{{ slide.title }}</h1>
-          <a [href]="slide.ctaLink" class="hero-cta">{{ slide.ctaText }}</a>
+          <a [routerLink]="slide.ctaLink" class="hero-cta">{{ slide.ctaText }}</a>
         </div>
       </div>
     }

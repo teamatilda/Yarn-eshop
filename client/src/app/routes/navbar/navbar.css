@@ -1,8 +1,19 @@
 /* HEADER MED LOGGA */
 
-header h1 {
+header .header-logo {
     text-align: center;
     margin: 0 0 2rem;
+}
+
+.header-logo {
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+}
+
+.header-logo h1 {
+    font-size: inherit;
+    margin: 0;
 }
 
 /* SÖKFÄLT*/
@@ -11,8 +22,6 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
 }
 
 .search-field {
@@ -25,15 +34,15 @@ input[type="text"] {
   padding: 10px 12px;
   border: 1px solid var(--color-chocolate);
   border-radius: 8px;
-  margin-right: 0.5rem;
   display: inline-block;
   width: min(250px, 40vw);
   font-size: 1rem;
+  margin-right: 0.5rem;
 }
 
 /* SÖK-KNAPP*/
 
-.button {
+.search button {
   background-color: var(--color-dark-sage);
   color: var(--color-cream);
   border: none;
@@ -44,7 +53,7 @@ input[type="text"] {
   transition: background-color 0.2s ease;
 }
 
-.button:hover {
+.search button:hover {
   background-color: var(--color-sage);
 }
 
@@ -104,7 +113,7 @@ input[type="text"] {
         gap: 1rem;
     }
 
-    header h1 {
+    header .header-logo {
         grid-column: 1 / -1;
         grid-row: 1;
         font-size: 4rem;
@@ -148,7 +157,7 @@ input[type="text"] {
         row-gap: 1rem;
     }
 
-    header h1 {
+    header .header-logo {
         grid-column: 1;
         grid-row: 1;
         justify-content: start;
@@ -163,8 +172,7 @@ input[type="text"] {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
-        margin: 0;
+        margin-right: 0.5rem;
     }
 
     .icons {
@@ -200,13 +208,12 @@ input[type="text"] {
         row-gap: 1.5rem;
     }
 
-    header h1 {
+    header .header-logo {
         font-size: 3.5rem;
     }
 
     .search {
         justify-content: center;
-        gap: 1.5rem;
     }
 
     input[type="text"] {

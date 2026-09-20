@@ -16,6 +16,14 @@ export class ProductService {
         return this.http.get<Product[]>(`/api/products`);
     }
 
+    getProductBySlug(slug: string): Observable<Product> {
+    return this.http.get<Product>(`/api/products/${slug}`);
+}
+
+    getProductById(id: number): Observable<Product> {
+        return this.http.get<Product>(`/api/products/${id}`);
+    }
+
     searchProducts(query: string): Observable<Product[]> {
 return this.http.get<Product[]>(`/api/products/search?q=${encodeURIComponent(query)}`);
     }

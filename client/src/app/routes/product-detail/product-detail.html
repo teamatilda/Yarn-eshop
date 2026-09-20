@@ -1,0 +1,32 @@
+<!-- PRODUCT-DETAIL PAGE -->
+
+@if (product(); as p) {
+  <section class="product-detail">
+    <img [src]="p.Image_url" [alt]="p.Title" class="product-detail-image" />
+    <div class="product-detail-info">
+      <h1>{{ p.Title }}</h1>
+      <p class="product-detail-price">{{ p.Price }} kr</p>
+      <p class="product-detail-description">{{ p.Description }}</p>
+      <button class="buy-btn">Lägg till i varukorg</button>
+    </div>
+  </section>
+
+  @if (similarProducts().length > 0) {
+    <section class="similar-products">
+      <h2>Liknande produkter</h2>
+      <div class="similar-products-grid">
+        @for (similar of similarProducts(); track similar.Slug) {
+          <a [routerLink]="['/product', similar.Slug]" class="similar-card">
+            <img [src]="similar.Image_url" [alt]="similar.Title" class="similar-card-image" />
+            <h3 class="similar-card-title">{{ similar.Title }}</h3>
+            <p class="similar-card-price">{{ similar.Price }}</p>
+          </a>
+        }
+      </div>
+    </section>
+  }
+} @else {
+  <p>Laddar produkt...</p>
+}
+
+

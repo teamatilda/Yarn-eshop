@@ -24,9 +24,16 @@ router.get('/search', (req, res) => {
     res.json(results);
 })
 
-// GET single product by id
-router.get('/:id', (req, res) => {
-    const product = db.prepare('SELECT * FROM products WHERE id = ?').get(req.params.id);
+
+// GET single product by id OR slug
+router.get('/:idOrSlug', (req, res) => {
+    const { idOrSlug } = req.params;
+    const isNumeric = /^\d+$/.test(idOrSlug);
+
+    const product = isNumeric
+        ? db.prepare('SELECT * FROM products WHERE ID = ?').get(idOrSlug)
+        : db.prepare('SELECT * FROM products WHERE Slug = ?').get(idOrSlug);
+
     if (!product) {
         return res.status(404).json({ error: 'Hittade ingen produkt' });
     }

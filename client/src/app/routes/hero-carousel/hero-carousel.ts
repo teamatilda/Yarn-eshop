@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { HeroSlide } from '../../../models/Hero';
+import { RouterLink } from '@angular/router';
 
 @Component({
+  imports: [RouterLink],
   selector: 'app-hero-carousel',
   standalone: true,
   templateUrl: './hero-carousel.html',

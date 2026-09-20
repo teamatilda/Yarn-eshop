@@ -1,9 +1,8 @@
 <!--Denna sida visas på home-page och innehåller produktkort-->
 
-<section>
     <div class="product-grid">
         @for (product of products(); track product.ID) {
-        <div class="product-card">
+        <a [routerLink]="['/product', product.Slug]" class="product-card">
             <div class="product-card-image-wrap">
                 <img [src]="product.Image_url" [alt]="product.Title" class="product-card-image">
             </div>
@@ -11,7 +10,6 @@
                 <h3 class="product-card-title">{{ product.Title }}</h3>
                 <p class="product-card-price">{{ product.Price }} kr</p>
             </div>
-        </div>
+        </a>
     }
     </div>
-</section>
