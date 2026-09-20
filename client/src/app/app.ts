@@ -1,22 +1,18 @@
 
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { Home  } from './routes/home/home'; 
-import { HeroCarousel } from './routes/hero-carousel/hero-carousel';
-import { FrontpageProducts } from './routes/frontpage-products/frontpage-products';
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Navbar } from './routes/navbar/navbar'; 
 import { Footer } from './routes/footer/footer';
-import { Spots } from './routes/spots/spots';
+
 
 @Component({
   selector: 'app-root',
-  imports: [Home, HeroCarousel, Spots, FrontpageProducts, Footer, RouterLink, RouterOutlet],
+  imports: [Navbar,  Footer, RouterOutlet],
   template: `
-  <app-home />
-  <app-hero-carousel />
-  <app-spots />
-  <app-frontpage-products />
+  <app-navbar />
+  <router-outlet />
   <app-footer />`,
-  styleUrl: './routes/home/home.css',
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('client');

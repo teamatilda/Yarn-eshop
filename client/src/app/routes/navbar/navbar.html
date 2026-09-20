@@ -1,0 +1,37 @@
+<!--Denna komponent innehåller sidornas header-->
+
+<!--Favorit-ikon-->
+<!--Cart-ikon-->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=favorite, shopping_cart"
+    rel="stylesheet" />
+
+<header>
+    <!--Bild/logga med namn-->
+    <h1>Färg & fiber</h1>
+
+    <section class="search">
+        <!--Sökfält-->
+        <input id="search-field"
+            type="text"
+            [(ngModel)]="searchTerm"
+            (keyup.enter)="onSearch()"
+            placeholder="Sök produkt..."
+        />
+        <button (click)="onSearch()">Sök</button>
+    </section>
+
+        <!--Favoriter och shopping cart ikoner-->
+    <section class="icons">
+        <a routerLink="/" class="material-symbols-outlined">favorite</a>
+        <a routerLink="/" class="material-symbols-outlined">shopping_cart</a>
+    </section>
+
+    <!--navbar-->
+    <section class="navbar">
+        <a routerLink="/">Nyheter</a>
+        <a routerLink="/">Topplista</a>
+        <a routerLink="/">Rea</a>
+        <a routerLink="/">Kampanjer</a>
+    </section>
+
+</header>
