@@ -38,6 +38,26 @@ router.get('/:idOrSlug', (req, res) => {
         return res.status(404).json({ error: 'Hittade ingen produkt' });
     }
     res.json(product);
-});
+})
+
+router.post('/', (req, res) => {
+    const { Title, Description, Price, Image_url } = req.body;
+
+    if (!Title || Price === undefined) {
+        return res.status(400).json({ error: 'Namn och pris krävs' });
+    }
+
+    const stmt = db.prepare(
+        'INSERT INTO products (Title, Description, Price, Image_url) VALUES (?, ?, ?, ?)'
+    );
+
+    const result = stmt.run(Title, Description ?? '', Price, Image_url ?? '');
+
+    const newProduct = db
+    .prepare('SELECT * FROM products WHERE ID = ?')
+    .get(result.lastInsertRowid);
+
+    res.status(201).json(newProduct);
+})
 
 export default router;

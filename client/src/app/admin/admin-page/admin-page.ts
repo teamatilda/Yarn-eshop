@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { ProductService } from '../../service/products.service';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-admin-page',
   styleUrl: './admin-page.css',
   templateUrl: './admin-page.html',
