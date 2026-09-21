@@ -1,14 +1,3 @@
-.header {
-    display: flex;
-    background-color: var(--color-dark-sage);
-    height: 3rem;
-    align-items: center;
-}
-
-.header h1 {
-    color: var(--color-cream);
-    margin-left: 1rem;
-}
 
 .title {
     display: flex;

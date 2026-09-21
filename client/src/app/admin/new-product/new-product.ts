@@ -2,9 +2,10 @@ import { Component, inject } from '@angular/core';
 import { ProductService } from '../../service/products.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AdminHeader } from '../admin-header/admin-header';
 
 @Component({
-  imports: [FormsModule],
+  imports: [FormsModule, AdminHeader],
   selector: 'app-new-product',
   styleUrl: './new-product.css',
   templateUrl: './new-product.html',
