@@ -19,8 +19,26 @@ export class NewProduct {
   slug = '';
   price: number | null = null;
 
+  titleError = '';
+  priceError ='';
+
   onSubmit() {
-    if (!this.title || this.price === null) {
+    this.titleError = '';
+    this.priceError = '';
+
+    let valid = true;
+
+    if (!this.title.trim()) {
+      this.titleError = 'Namn krävs';
+      valid = false;
+    } 
+
+    if (this.price === null || this.price < 0) {
+      this.priceError = 'Pris krävs och måste vara positivt';
+      valid = false;
+    }
+
+    if (!valid) {
       return;
     }
 
@@ -30,7 +48,7 @@ export class NewProduct {
         Description: this.description,
         Image_url: this.imageUrl,
         Slug: this.slug,
-        Price: this.price,
+        Price: this.price!,
       })
       .subscribe(() => {
         this.router.navigate(['/admin']);
