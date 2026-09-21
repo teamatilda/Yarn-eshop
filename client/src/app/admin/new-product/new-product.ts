@@ -52,7 +52,7 @@ export class NewProduct {
         Price: this.price!,
       })
       .subscribe(() => {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin/products']);
       });
   }
 }

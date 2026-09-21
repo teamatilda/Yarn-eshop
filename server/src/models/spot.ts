@@ -1,4 +1,4 @@
-/* Inteface for spots, server-side */
+/* Interface for spots, server-side */
 
 export interface Spot {
     id: number;

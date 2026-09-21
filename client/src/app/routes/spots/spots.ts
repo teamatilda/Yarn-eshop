@@ -1,6 +1,7 @@
-import { Component, OnInit, signal, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Spot } from '../../../models/Spot';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-spots',
@@ -8,13 +9,8 @@ import { Spot } from '../../../models/Spot';
   templateUrl: './spots.html',
   styleUrl: './spots.css'
 })
-export class Spots implements OnInit {
+export class Spots {
   private http = inject(HttpClient);
-  spots = signal<Spot[]>([]);
-
-  ngOnInit() {
-    this.http.get<Spot[]>('/api/spots').subscribe(data => {
-      this.spots.set(data);
-    });
+  
+  spots = toSignal(this.http.get<Spot[]>('/api/spots'), { initialValue: [] });
   }
-}

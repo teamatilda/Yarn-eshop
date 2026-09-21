@@ -17,5 +17,5 @@ export const routes: Routes = [
     ],
   },
   { path: 'admin/products', component: AdminPage },
-  { path: 'admin/products/new', component: NewProduct }
+  { path: 'admin/products/new', component: NewProduct },
 ];
