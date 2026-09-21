@@ -1,0 +1,32 @@
+<!-- ADMIN PAGE-->
+
+<!--Header-->
+<h1>Administration</h1>
+
+<!--All products-->
+
+<div class="header">
+<h2>Produkter</h2>
+<button>Ny produkt</button>
+</div>
+
+<div class="product-table">
+<table>
+    <thead>
+    <tr>
+        <th>Namn</th>
+        <th>ID</th>
+        <th>Pris</th> 
+    </tr>
+    </thead>
+    <tbody>
+        @for (product of products(); track product.ID) {
+            <tr>
+                <td>{{ product.Title }}</td>
+                <td>{{ product.ID }}</td>
+                <td>{{ product.Price }}</td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
