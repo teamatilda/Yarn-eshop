@@ -27,5 +27,9 @@ export class ProductService {
     searchProducts(query: string): Observable<Product[]> {
 return this.http.get<Product[]>(`/api/products/search?q=${encodeURIComponent(query)}`);
     }
+
+    addProduct(product: Omit<Product, 'ID'>) {
+        return this.http.post<Product>('/api/products', product);
+    }
 }
 

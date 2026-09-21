@@ -6,6 +6,7 @@ import spotsRouter from "./routes/spots.js";
 
 // Skapa express-applikationen
 const app = express();
+app.use(express.json());
 
 // Behövs för __dirname i ES modules
 const __filename = fileURLToPath(import.meta.url);

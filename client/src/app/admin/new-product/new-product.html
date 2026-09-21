@@ -1,0 +1,33 @@
+<!-- New product in admin -->
+
+<app-admin-header></app-admin-header>
+
+<!--Header-->
+<h2>Ny produkt</h2>
+
+<!--Form-->
+
+<form (ngSubmit)="onSubmit()">
+    <h3>Namn</h3>
+    <input type="text" name="title" [(ngModel)]="title" [class.invalid]="titleError" />
+    @if (titleError) {
+      <span class="error">{{ titleError }}</span>
+    }
+
+    <h3>Beskrivning</h3>
+    <input type="text" name="description" [(ngModel)]="description" />
+
+    <h3>Bild</h3>
+    <input type="text" name="imageUrl" [(ngModel)]="imageUrl" placeholder="URL till bild" />
+
+    <h3>Pris</h3>
+      <input type="number" name="price" [(ngModel)]="price" [class.invalid]="priceError" min="0" step="0.01" />
+      @if (priceError) {
+        <span class="error">{{ priceError }}</span>
+      }
+
+    <button type="submit" class="add-button">Lägg till</button>
+
+</form>
+
+
