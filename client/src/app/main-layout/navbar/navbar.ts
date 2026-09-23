@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -9,9 +9,9 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './navbar.html',
 })
 export class Navbar {
-  searchTerm = '';
+  private router = inject(Router);
 
-  constructor(private router: Router) {}
+  searchTerm = '';
 
   onSearch() {
     if (this.searchTerm.trim()) {

@@ -11,8 +11,7 @@ import { AdminHeader } from '../admin-header/admin-header';
   templateUrl: './admin-page.html',
 })
 export class AdminPage {
-   private productService = inject(ProductService);
+  private productService = inject(ProductService);
 
   products = toSignal(this.productService.getAllProducts(), { initialValue: [] });
 }
-
