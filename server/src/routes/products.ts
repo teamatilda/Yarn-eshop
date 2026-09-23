@@ -40,6 +40,7 @@ router.get('/:idOrSlug', (req, res) => {
     res.json(product);
 })
 
+// Create new product
 router.post('/', (req, res) => {
     const { Title, Description, Price, Image_url } = req.body;
 

@@ -11,6 +11,7 @@ import { AdminHeader } from '../admin-header/admin-header';
   templateUrl: './new-product.html',
 })
 export class NewProduct {
+  // Injektar addProdycts från productservice
   private productService = inject(ProductService);
   private router = inject(Router);
 
@@ -52,7 +53,7 @@ export class NewProduct {
         Price: this.price!,
       })
       .subscribe(() => {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin/products']);
       });
   }
 }

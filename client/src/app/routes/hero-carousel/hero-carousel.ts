@@ -29,32 +29,31 @@ export class HeroCarousel implements OnInit, OnDestroy {
     {
       id: 3,
       imageUrl: '/images/wool.jpg',
-      title: 'Läs allt om vårat ull',
+      title: 'Läs allt om våran ull',
       ctaText: 'Läs här',
       ctaLink: '/'
     }
   ]);
 
-  // Börjar på 0
   currentIndex = signal(0);
 
-  // Privat variable som sparar referensen till timern
+  // Private variable saves interval
   private intervalId?: ReturnType<typeof setInterval>;
 
-  // intervall på 5 sekunder
+  // interval 5 sec
   private readonly intervalMs = 5000;
 
-  // Körs när komponenten skapas - autoplay på timern
+  // Autoplay of timer
   ngOnInit() {
     this.startAutoplay();
   }
 
-  // Stängs av när man navigerar från sidan
+  // Turns off when navigating off site
   ngOnDestroy() {
     this.stopAutoplay();
   }
 
-  // Starta autoplay, timer anropas next varje 5:e sekund
+  // Starts autoplay, timer every 5 sec
   startAutoplay() {
     this.stopAutoplay();
     this.intervalId = setInterval(() => this.next(), this.intervalMs);
@@ -66,19 +65,19 @@ export class HeroCarousel implements OnInit, OnDestroy {
     }
   }
 
-  // Nästa slide
+  // Next slide
   next() {
     const total = this.slides().length;
     this.currentIndex.set((this.currentIndex() + 1) % total);
   }
 
-  // Föregående slide
+  // Previous slide
   prev() {
     const total = this.slides().length;
     this.currentIndex.set((this.currentIndex() - 1 + total) % total);
   }
 
-  // Går till specifik slide när man klickar på en punkt
+  // Go to slide with dots
   goTo(index: number) {
     this.currentIndex.set(index);
     this.startAutoplay(); // reset timer on manual navigation
