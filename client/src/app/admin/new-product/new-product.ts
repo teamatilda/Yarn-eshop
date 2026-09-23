@@ -11,6 +11,7 @@ import { AdminHeader } from '../admin-header/admin-header';
   templateUrl: './new-product.html',
 })
 export class NewProduct {
+  // Injektar addProdycts från productservice
   private productService = inject(ProductService);
   private router = inject(Router);
 
