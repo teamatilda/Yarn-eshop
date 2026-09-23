@@ -22,7 +22,7 @@ export class NewProduct {
   price: number | null = null;
 
   titleError = '';
-  priceError ='';
+  priceError = '';
 
   onSubmit() {
     this.titleError = '';
@@ -33,7 +33,7 @@ export class NewProduct {
     if (!this.title.trim()) {
       this.titleError = 'Namn krävs';
       valid = false;
-    } 
+    }
 
     if (this.price === null || this.price < 0) {
       this.priceError = 'Pris krävs och måste vara positivt';
@@ -57,6 +57,3 @@ export class NewProduct {
       });
   }
 }
-
-
-

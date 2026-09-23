@@ -1,4 +1,4 @@
-/* Interface före hero-karusell */
+/* Interface for hero-carousel */
 
 export interface HeroSlide {
   id: number;
